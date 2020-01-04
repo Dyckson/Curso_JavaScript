@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>Exercicio Modulo 2</title>
+</head>
+<body>
+<!--
+A partir do seguinte vetor:
+var nomes = ["Diego", "Gabriel", "Lucas"];
+Preencha uma lista (<ul>) no HTML com os itens da seguinte forma:
+● Diego
+● Gabriel
+● Lucas
+-->
+<ul id="lista"></ul>
+
+<script>
+	var names = ["Diego", "Gabriel", "Lucas"];
+	var ulElements = document.getElementById('lista');
+	for (nome of names){
+		var li = document.createElement('li');
+		var text = document.createTextNode(nome);
+		li.appendChild(text);
+    	ulElements.appendChild(li);
+	};
+</script>
+
+</body>
+</html>

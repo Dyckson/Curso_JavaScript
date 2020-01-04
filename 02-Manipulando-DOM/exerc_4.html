@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>Exercicio Modulo 2</title>
+</head>
+<body>
+<!--
+Seguindo o resultado do exercício anterior adicione um input em tela e um botão como a seguir:
+<input type="text" name="nome">
+<button onClick="adicionar()">Adicionar</button>
+Ao clicar no botão, a função adicionar() deve ser disparada adicionando um novo item a lista de
+nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
+demais itens anteriores. Além disso, o conteúdo do input deve ser apagado após o clique.
+-->
+<input type="text" name="nome">
+<button onClick="adicionar()">Adicionar</button>
+<ul id="lista"></ul>
+
+<script>
+	var names = ["Diego", "Gabriel", "Lucas"];
+	var inputElement = document.querySelector('input');
+	var ulElements = document.getElementById('lista');
+	for (nome of names){
+		var li = document.createElement('li');
+		var text = document.createTextNode(nome);
+		li.appendChild(text);
+    	ulElements.appendChild(li);
+	};
+
+	function adicionar(){
+	var novoInput = inputElement.value;
+	var novaLi = document.createElement('li');
+	var novoText = document.createTextNode(novoInput);
+	novaLi.appendChild(novoText);
+	ulElements.appendChild(novaLi);
+	inputElement.value = ""
+	};
+</script>
+
+</body>
+</html>

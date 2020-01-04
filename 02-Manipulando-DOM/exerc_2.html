@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>Exercicio Modulo 2</title>
+</head>
+<body>
+<!-- 
+Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima de algum quadrado troque sua cor para uma cor aleatória gerada pela função abaixo:
+function getRandomColor() {
+ var letters = "0123456789ABCDEF";
+ var color = "#";
+ for (var i = 0; i < 6; i++) {
+ color += letters[Math.floor(Math.random() * 16)];
+ }
+ return color;
+}
+var newColor = getRandomColor(); // #E943F0
+-->
+
+<button id="btnClick">Clique em mim</button>
+<div id="quadrado"></div>
+
+<script>
+	var btnElement = document.getElementById('btnClick');
+	var quadElement = document.getElementById('quadrado');
+
+	function getRandomColor() {
+		var letters = "0123456789ABCDEF";
+		var color = "#";
+		for (var i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+		}
+ 		return color;
+	}
+
+	btnElement.onclick = function() {
+		var novoQuad = document.createElement('div');
+		novoQuad.style.width = '100px';
+		novoQuad.style.height = '100px';
+		novoQuad.style.backgroundColor = 'red';
+
+		novoQuad.onmouseover = function(){
+		novoQuad.style.backgroundColor = getRandomColor();
+		};	
+		quadElement.appendChild(novoQuad);
+	};
+</script>
+
+</body>
+</html>

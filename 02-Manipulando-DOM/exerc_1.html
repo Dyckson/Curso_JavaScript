@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>Exercicio Modulo 2</title>
+</head>
+<body>
+<!-- Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+aparecer na tela. -->
+
+<button id="btnClick">Clique em mim</button>
+<div id="quadrado"></div>
+
+<script>
+	var btnElement = document.getElementById('btnClick');
+	var quadElement = document.getElementById('quadrado');
+	
+	btnElement.onclick = function() {
+		var novoQuad = document.createElement('div');
+		novoQuad.style.width = '100px';
+		novoQuad.style.height = '100px';
+		novoQuad.style.backgroundColor = 'red';
+		
+		quadElement.appendChild(novoQuad);
+		console.log(novoQuad);
+	};
+</script>
+
+</body>
+</html>
